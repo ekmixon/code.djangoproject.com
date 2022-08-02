@@ -78,7 +78,7 @@ class DjangoAuth:
            authorization = authorization.encode('iso-8859-1').decode('utf-8')
 
         method, _, credentials = authorization.partition(' ')
-        if not method.lower() == 'basic':
+        if method.lower() != 'basic':
             return
 
         try:

@@ -13,9 +13,7 @@ class CustomWikiModule(WikiModule):
 
     def get_active_navigation_item(self, req):
         pagename = req.args.get('page')
-        if pagename == 'Reports':
-            return 'custom_reports'
-        return 'wiki'
+        return 'custom_reports' if pagename == 'Reports' else 'wiki'
 
 
 class CustomNewTicket(Component):
